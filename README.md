@@ -1,4 +1,4 @@
-A port of the Jekyll theme Hyde by Poole to Statamic.
+A port of the Jekyll theme <a href="https://github.com/poole/hyde">Hyde</a> by Poole to <a href="http://statamic.com">Statamic</a>.
 
 I based the code for the theme on the Denali that ships with Statamic.
 
