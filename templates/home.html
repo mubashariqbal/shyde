@@ -1,0 +1,14 @@
+<div class="posts">
+{{ entries:listing folder="blog" limit="{home_blog_items}" }}
+ <div class="post">
+    <h1 class="post-title"><a href="{{ url }}">{{ title }}</a></h1>
+    <span class="post-date">{{ datestamp format="F jS, Y" }}</span>
+
+    {{ content|widont }}
+
+    {{ if categories }}
+    <p class="entry-meta"> Filed under {{ categories_url_list }}.</p>
+    {{ endif }}
+  </div>
+{{ /entries:listing }}
+</div>

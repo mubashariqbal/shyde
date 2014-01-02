@@ -1,0 +1,24 @@
+<div class="posts">
+<div class="post">
+  <h1 class="post-title"><a href="{{ url }}">{{ title }}</a></h1>
+  <span class="post-date">{{ datestamp format="F jS, Y" }}</span>
+
+  {{ content }}
+
+  {{ if categories }}
+  <p class="entry-meta"> Filed under {{ categories_url_list }}.</p>
+  {{ endif }}
+</div>
+{{ entries:listing folder="blog" conditions="categories:{ categories_option_list },url:not {page_url}" limit="3" sort_by="random" }}
+{{ if total_results }}
+  {{ if first }}
+  <div class="block">
+    <h3>Related Entries</h3>
+  {{ endif }}
+    <p><a href="{{ url }}">{{ title }}</a></p>
+  {{ if last }}
+  </div>
+  {{ endif }}
+{{ endif }}
+{{ /entries:listing }}
+</div>

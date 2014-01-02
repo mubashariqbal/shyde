@@ -1,0 +1,24 @@
+{{ entries:listing folder="blog" limit="10" }}
+ <div class="block entry">
+    <h1 class="post-title"><a href="{{ url }}">{{ title }}</a></h1>
+    <span class="post-date">{{ datestamp format="F jS, Y" }}</span>
+
+    {{ content }}
+
+    {{ if categories }}
+    <p class="entry-meta"> Filed under {{ categories_url_list }}.</p>
+    {{ endif }}
+
+  </div>
+{{ /entries:listing }}
+
+{{ entries:pagination folder="blog" limit="10"}}
+<div class="pagination">
+  {{ if previous_page }}
+    <a href="{{ previous_page }}">Previous Page</a>
+  {{ endif }}
+  {{ if next_page }}
+    <a href="{{ next_page }}">Next Page</a>
+  {{ endif }}
+</div>
+{{ /entries:pagination }}

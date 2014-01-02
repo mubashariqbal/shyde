@@ -1,0 +1,21 @@
+<div class="block">
+  <h1>All Categories</h1>
+</div>
+
+{{ taxonomy:listing folder="blog" type="categories" }}
+  {{ if no_results }}
+    <p>{{ no_results_text }}</p>
+  {{ else }}
+  <div class="block">
+    <h3>{{ name|title }}</h3>
+    {{entries:listing folder="blog" conditions="categories:{name}"}}
+
+      {{ if no_results }}
+        {{ no_results_text }}
+      {{ else }}
+        <p><a href="{{ url }}">{{ title }}</a></p>
+      {{ endif }}
+    {{ /entries:listing }}
+  </div>
+  {{ endif }}
+{{ /taxonomy:listing }}

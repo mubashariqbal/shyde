@@ -1,0 +1,14 @@
+###########################################################################################
+#
+#  THEME VARIABLES
+#
+###########################################################################################
+
+# Theme name
+theme_name: SHyde
+
+# Homepage configuration
+home_blog_items: 2
+
+# Global text snippets
+no_results_text: "Sorry, no results found."

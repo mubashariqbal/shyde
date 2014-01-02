@@ -1,0 +1,6 @@
+<h3>Blog Categories</h3>
+<ul class="sidebar-nav">
+  {{ taxonomy:listing folder="blog" type="categories" sort_by="name" sort_dir="asc" }}
+    <li class="sidebar-nav-item"><a href="{{ url }}">{{ name }}</a></li>
+  {{ /taxonomy:listing }}
+</ul>

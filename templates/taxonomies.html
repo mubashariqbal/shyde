@@ -1,0 +1,44 @@
+{{ if taxonomy_slug }}
+<div class="block">
+  <h3>Blog Category: <em>{{ taxonomy_slug }}</em></h3>
+</div>
+
+<div class="posts">
+{{ entries:listing folder="blog" limit="10" taxonomy="true" }}
+	{{ if no_results }}
+		{{ redirect url="/404" }}
+	{{ else }}
+		<div class="post">
+			<h1 class="post-title"><a href="{{ url }}">{{ title }}</a></h1>
+			<span class="post-date"> {{ datestamp format="F jS, Y" }}</span>
+			{{ content }}
+
+			{{ if categories }}
+			<p class="entry-meta"> Filed under {{ categories_url_list }}.</p>
+			{{ endif }}
+		</div>
+	{{ endif }}
+{{ /entries:listing }}
+</div>
+
+{{ entries:pagination folder="blog" limit="10" taxonomy="yes" }}
+<div class="pagination">
+  {{ if previous_page }}
+    <a href="{{ previous_page }}">Previous Page</a>
+  {{ endif }}
+  {{ if next_page }}
+    <a href="{{ next_page }}">Next Page</a>
+  {{ endif }}
+</div>
+{{ /entries:pagination }}
+
+{{ else }}
+
+<div class="row">
+  <div class="span12">
+      <h1>Categories</h1>
+      {{ content }}
+    </div>
+</div>
+
+{{ endif }}
